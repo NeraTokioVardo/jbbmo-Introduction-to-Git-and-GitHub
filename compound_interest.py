@@ -11,12 +11,6 @@
 # Output:
 # compound interest = p * (1 + r/100)^t
 
-from flask import Flask
-
-app = Flask("My Flask Application")
-
-
-@app.route("/")
 def compound_interest(p, t, r):
     return p * (pow((1 + r / 100), t))
 
@@ -27,4 +21,3 @@ if __name__ == "__main__":
     r = float(input("Enter the rate of interest: "))
 
     print("The compound interest is {:.2f}".format(compound_interest(p, t, r)))
-    app.run(debug=True)
